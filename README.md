@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/jokergoo/EnrichedHeatmap.svg)](https://travis-ci.org/jokergoo/EnrichedHeatmap)
 [![codecov](https://img.shields.io/codecov/c/github/jokergoo/EnrichedHeatmap.svg)](https://codecov.io/github/jokergoo/EnrichedHeatmap)
-[![bioc](http://www.bioconductor.org/shields/downloads/EnrichedHeatmap.svg)](https://bioconductor.org/packages/stats/bioc/EnrichedHeatmap/) 
+[![bioc](https://bioconductor.org/shields/downloads/devel/EnrichedHeatmap.svg)](https://bioconductor.org/packages/stats/bioc/EnrichedHeatmap/) 
 [![bioc](http://mcube.nju.edu.cn/cgi-bin/zuguanggu/bioc_download.pl?package=EnrichedHeatmap)](https://bioconductor.org/packages/stats/bioc/EnrichedHeatmap/) 
 [![bioc](http://www.bioconductor.org/shields/years-in-bioc/EnrichedHeatmap.svg)](http://bioconductor.org/packages/devel/bioc/html/EnrichedHeatmap.html)
 
@@ -53,7 +53,7 @@ lgd = Legend(at = c("cluster1", "cluster2", "cluster3"), title = "Clusters",
     type = "lines", legend_gp = gpar(col = 2:4))
 ht_list = Heatmap(partition, col = structure(2:4, names = as.character(1:3)), name = "partition",
               show_row_names = FALSE, width = unit(3, "mm")) +
-          EnrichedHeatmap(mat1, col = c("white", "red"), name = "H3K4me3", split = partition,
+          EnrichedHeatmap(mat1, col = c("white", "red"), name = "H3K4me3", row_split = partition,
               top_annotation = HeatmapAnnotation(lines = anno_enriched(gp = gpar(col = 2:4))), 
               column_title = "H3K4me3") + 
           EnrichedHeatmap(mat2, name = "methylation",
